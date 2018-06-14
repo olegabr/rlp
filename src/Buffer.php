@@ -37,7 +37,7 @@ class Buffer implements ArrayAccess
      * @param string $encoding the data encoding
      * @return void
      */
-    public function __construct($data=[], string $encoding='utf8')
+    public function __construct($data=[], $encoding='utf8')
     {
         $this->encoding = strtolower($encoding);
 
@@ -101,7 +101,7 @@ class Buffer implements ArrayAccess
      * @param string $encoding
      * @return string
      */
-    public function toString(string $encoding='utf8')
+    public function toString($encoding='utf8')
     {
         $output = '';
         $input = $this->data;
@@ -185,7 +185,7 @@ class Buffer implements ArrayAccess
      * @param mixed $end
      * @return \RLP\Buffer
      */
-    public function slice(int $start=0, $end=null)
+    public function slice($start=0, $end=null)
     {
         if ($end === null) {
             $end = $this->length();
@@ -227,7 +227,7 @@ class Buffer implements ArrayAccess
      * @param array $inputs
      * @return array
      */
-    protected function arrayToData(array $inputs)
+    protected function arrayToData($inputs)
     {
         $output = [];
 
@@ -252,7 +252,7 @@ class Buffer implements ArrayAccess
      * @param string $encoding
      * @return array
      */
-    protected function stringToData(string $input, string $encoding)
+    protected function stringToData($input, $encoding)
     {
         $output = [];
 

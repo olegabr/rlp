@@ -52,7 +52,7 @@ class RLP
      * @param string $input
      * @return array
      */
-    public function decode(string $input)
+    public function decode($input)
     {
         // if (!is_string($input)) {
         //     throw new InvalidArgumentException('Input must be string when call decode.');
@@ -70,7 +70,7 @@ class RLP
      * @param \Web3p\RLP\Buffer $input
      * @return array
      */
-    protected function decodeData(Buffer $input)
+    protected function decodeData($input)
     {
         $firstByte = $input[0];
         $output = new Buffer;
@@ -167,7 +167,7 @@ class RLP
      * @param int $offset
      * @return \Web3p\RLP\Buffer
      */
-    protected function encodeLength(int $length, int $offset)
+    protected function encodeLength($length, $offset)
     {
         // if (!is_int($length) || !is_int($offset)) {
         //     throw new InvalidArgumentException('Length and offset must be int when call encodeLength.');
@@ -187,7 +187,7 @@ class RLP
      * @param int $value
      * @return string
      */
-    protected function intToHex(int $value)
+    protected function intToHex($value)
     {
         // if (!is_int($value)) {
         //     throw new InvalidArgumentException('Value must be int when call intToHex.');
@@ -203,7 +203,7 @@ class RLP
      * @param string $value
      * @return string
      */
-    protected function padToEven(string $value)
+    protected function padToEven($value)
     {
         // if (!is_string($value)) {
         //     throw new InvalidArgumentException('Value must be string when call padToEven.');

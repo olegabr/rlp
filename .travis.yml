@@ -3,15 +3,18 @@ sudo: required
 language: php
 
 php:
+  - 5.6
+  - 7.0
   - 7.1
+  - 7.2
 
 install:
-  - composer install
+  - composer install --prefer-dist --no-interaction
 
 notifications:
   email:
     recipients:
-      - alk03073135@gmail.com
+      - olegabrosimovnsk@gmail.com
     on_success: always
     on_failure: always
 
@@ -19,4 +22,4 @@ script:
   - vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
-    - bash <(curl -s https://codecov.io/bash) -t 777e13ce-d1c7-426c-aafe-19922c59823c
+    - bash <(curl -s https://codecov.io/bash) -t 0eb07ff9-4fbc-4011-8747-e0d098e1bf01
